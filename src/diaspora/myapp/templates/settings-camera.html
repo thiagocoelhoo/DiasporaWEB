@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <title>Diaspora - Settings</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <style>
+            body {
+                overflow-y: hidden;
+            }
+
+            main {
+                padding-top: 48px;
+            }
+
+            .sidebar {
+                min-width: 250px;
+                overflow-y: auto;
+            }
+
+            .main-container {
+                overflow-y: auto;
+            }
+            
+            .mynav {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+            }
+
+            .trash-btn {
+                color: #b02a37;
+            }
+        </style>
+    </head>
+    <body class="bg-light">
+        <!-- HEADER -->
+        <header class="navbar mynav navbar-expand-md navbar-dark bg-primary shadow-sm px-2 py-1" id="navbar">
+            <a class="navbar-brand col-2" href="/">Diaspora</a>
+            
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/settings/">Settigns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/logout/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main class="d-flex h-100">
+            
+            <!-- SIDEBAR -->
+            <div class="flex-shrink-1 bg-white shadow-sm border sidebar">
+                <div class="p-2">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link link-dark py-2" href="/settings/arduino">
+                                <i class="bi bi-cpu"></i> Arduino
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active py-2" href="/settings/cameras">
+                                <i class="bi bi-camera-reels"></i> Câmeras
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-dark py-2" href="/settings/notifications">
+                                <i class="bi bi-bell"></i> Notificações
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="flex-grow-1 p-4 main-container">
+                <div class="mx-auto px-4 pt-4 w-50" style="min-width: 500px;">
+                    <form method="POST">
+                        <div class="border-bottom p-2 mb-4">
+                            <h2>Câmeras</h2>
+                        </div>
+
+                        <div class="d-flex mb-4 px-3 py-2 border-bottom">
+                            <span class="me-4">Armazenamento:</span>
+                            <input id="memoria" class="form-control" type="text">
+                        </div>
+
+                        <div class="mb-4 px-3 py-2 border-bottom">
+                            <span class="me-4">Cameras:</span>
+                            <table class="table table-striped table-hover table-borderless">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Camera</th>
+                                    <th>Nome</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Camera 01</td>
+                                    <td>Corredor principal</td>
+                                    <td>
+                                        <button class="btn p-2 trash-btn">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Camera 02</td>
+                                    <td>Biblioteca</td>
+                                    <td>
+                                        <button class="btn p-2 trash-btn">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Camera 03</td>
+                                    <td>Laboratório II</td>
+                                    <td>
+                                        <button class="btn p-2 trash-btn">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Camera 04</td>
+                                    <td>Refeitório</td>
+                                    <td>
+                                        <button class="btn p-2 trash-btn">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="text-end">
+                                <button class="btn btn-success">
+                                    <i class="bi bi-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary w-100" type="submit">Salvar</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </body>
+</html>
