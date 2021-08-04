@@ -1,3 +1,4 @@
+{% load static %}
 <html>
     <head>
         <title>Diaspora - Login</title>
@@ -8,19 +9,20 @@
                 max-width: 330px;
                 width: 100%;
             }
-
-
+            
         </style>
     </head>
-    <body class="d-flex h-100 bg-light">
-        <main class="login-form border rounded-3 shadow m-auto">
-            <form method="post" class="h-100 mb-0">
+    <body class="d-flex h-100 bg-light flex-column">
+        
+        <main class="login-form border rounded-3 m-auto shadow">
+            <form method="post" class="mb-0">
                 {% csrf_token %}
                 
                 <div class="px-4 py-2 rounded-top text-secondary text-center border-bottom">
-                    <h4>Login</h4>
+                    <!--<h4>Login</h4>-->
+                    <img src="{% static 'images/Diaspora.png' %}" alt="", style="width: 100%;">
                 </div>
-                
+
                 <div class="p-4 rounded-bottom">
                     <input type="text" name="{{ form.username.name}}" id="username-input" class="form-control mb-2 p-3" placeholder="Nome de usuario">
                     <input type="password" name="{{ form.password.name}}" id="password-input" class="form-control p-3" placeholder="Senha">
@@ -30,6 +32,20 @@
                 </div>
             </form>
         </main>
-            
+
+        <footer clss="footer mt-4">
+            <div class="p-4 bg-dark text-light shadow w-100 shadow">
+                <h3>O que é Diáspora?</h3>
+                <p class='pt-3 fs-5'>
+                    O sistema Diáspora é um sistema de monitoramento feito para auxiliar na
+                execução de medidas de prevenção contra COVID-19, idealizado para uso em 
+                escolas e outras áreas de grande movimentação, sendo possível ajustar a suas 
+                necessidades. Este utiliza câmeras presentes para identificar a presença de 
+                aglomerações, com o acompanhamento de sensores barométricos e a utilização de 
+                sensores de temperatura para identificar casos de febre.
+                </p>
+            </div>
+        </footer>
+
     </body>
 </html>
