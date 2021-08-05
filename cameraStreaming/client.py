@@ -86,7 +86,7 @@ async def on_message(message: str, pc: RTCPeerConnection, ws: WebSocketClientPro
 
 
 async def main():
-    uri = 'ws://127.0.0.1:8000/myconsumer'
+    uri = 'ws://127.0.0.1:8000/consumers/videostream'
 
     async with websockets.connect(uri) as ws:
         pc = await create_peer_connection()
