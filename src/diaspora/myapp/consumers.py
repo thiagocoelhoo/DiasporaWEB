@@ -95,6 +95,6 @@ class VideoStreamConsumer(AsyncJsonWebsocketConsumer):
         )
     
     async def message(self, event):
-        if event['destionation_channel'] != self.channel_name:
+        if event['destination_channel'] != self.channel_name:
             message = json.dumps(event['message'])
             await self.send(text_data=message)
