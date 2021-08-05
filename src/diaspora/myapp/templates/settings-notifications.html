@@ -100,8 +100,11 @@
                         <div class="mb-4 px-3 py-2 border-bottom">
                             <h3>Aglomerações</h3>
                             <div class="d-flex">
-                                <span class="me-4">Distancia minima:</span>
-                                <input id="memoria" class="form-control" type="text">
+                                <span class="me-4">Distancia minima (m):</span>
+                                <div class="input-group ">
+                                    <input id="distancia" class="form-control" type="text" value="{{ settings.min_distance_people }}">
+                                    <span class="input-group-text"> m </span>
+                                </div>                                
                             </div>
                             
                         </div>
@@ -110,16 +113,21 @@
                             <h3>Gases</h3>
                             <div class="d-flex">
                                 <span class="me-4">Taxa máxima:</span>
-                                <input id="memoria" class="form-control" type="text">
+                                <div class="input-group">
+                                    <input id="gases" class="form-control" type="text" value="{{ settings.min_rate_gases }}">
+                                    <span class="input-group-text"> ppm </span>
+                                </div>
                             </div>
-                            
                         </div>
 
                         <div class="mb-4 px-3 py-2 border-bottom">
                             <h4>Temperatura</h4>
                             <div class="d-flex">
                                 <span class="me-4">Temperatura máxima:</span>
-                                <input id="memoria" class="form-control" type="text">
+                                <div class="input-group">
+                                    <input id="temperatura" class="form-control" type="text" value="{{ settings.max_temperature }}">
+                                    <span class="input-group-text">c°</span>
+                                </div>
                             </div>
                         </div>
                         <button class="btn btn-primary w-100" type="submit">Salvar</button>
