@@ -23,3 +23,10 @@ class Camera(models.Model):
 class SensorData(models.Model):
     gas = models.IntegerField()
     temp = models.FloatField()
+
+
+class Settings(models.Model):
+    image_store_limit = models.FloatField()
+    max_temperature = models.FloatField()
+    min_distance_people = models.FloatField()
+    min_rate_gases = models.IntegerField()
