@@ -126,7 +126,12 @@ def settings_camera_view(request):
 
 @login_required
 def settings_notifications_view(request):
-    return render(request, 'settings-notifications.html')
+    try:
+        context = {'settings': models.Settings.objects.first()}
+    except:
+        context = {'settings': models.Settings.objects.create()}
+    
+    return render(request, 'settings-notifications.html', context)
 
 
 @login_required
