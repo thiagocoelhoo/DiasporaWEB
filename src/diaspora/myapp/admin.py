@@ -6,3 +6,4 @@ from . import models
 admin.site.register(models.Arduino)
 admin.site.register(models.Camera)
 admin.site.register(models.SensorData)
+admin.site.register(models.Settings)
