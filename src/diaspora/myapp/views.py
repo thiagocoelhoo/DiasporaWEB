@@ -121,16 +121,33 @@ def settings_arduino_view(request):
 
 @login_required
 def settings_camera_view(request):
-    return render(request, 'settings-camera.html')
+    settings, created = models.Settings.objects.get_or_create(
+        id=1,
+        defaults={
+            'image_store_limit': 10,
+            'max_temperature': 36,
+            'min_distance_people': 1,
+            'min_rate_gases': 100
+        }
+    )
+    context = {'settings': settings}
+    
+    return render(request, 'settings-camera.html', context=context)
 
 
 @login_required
 def settings_notifications_view(request):
-    try:
-        context = {'settings': models.Settings.objects.first()}
-    except:
-        context = {'settings': models.Settings.objects.create()}
-    
+    settings, created = models.Settings.objects.get_or_create(
+        id=1,
+        defaults={
+            'image_store_limit': 10,
+            'max_temperature': 36,
+            'min_distance_people': 1,
+            'min_rate_gases': 100
+        }
+    )
+    context = {'settings': settings}
+
     return render(request, 'settings-notifications.html', context)
 
 
