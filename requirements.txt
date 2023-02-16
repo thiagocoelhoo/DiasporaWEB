@@ -40,5 +40,5 @@ sqlparse==0.4.1
 Twisted==21.2.0
 txaio==21.2.1
 websockets==9.1
-Werkzeug==2.0.1
+Werkzeug==2.2.3
 zope.interface==5.4.0
